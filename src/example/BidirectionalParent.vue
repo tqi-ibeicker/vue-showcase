@@ -1,6 +1,6 @@
 <template>
 	<v-card>
-		<v-card-title>{{ getCurrentInstance()?.type.__name }}.vue</v-card-title>
+		<v-card-title>{{ componentName() }}</v-card-title>
 		<v-card-text>
 			Count: {{ count }}
 			<v-btn icon="mdi-plus" @click="count += 1"></v-btn>
@@ -10,8 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import {getCurrentInstance, ref} from 'vue'
-import BidirectionalChild from "@/example/BidirectionalChild.vue";
+import { ref } from 'vue'
+import BidirectionalChild from '@/example/BidirectionalChild.vue'
+import { componentName } from '@/utils'
 
 const count = ref(0)
 </script>

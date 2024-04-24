@@ -1,12 +1,13 @@
 <template>
 	<v-card class="mt-4">
-		<v-card-title>{{ getCurrentInstance()?.type.__name }}.vue</v-card-title>
+		<v-card-title>{{ componentName() }}</v-card-title>
 		<v-card-text> ChangeCount: {{ changedCount }}</v-card-text>
 	</v-card>
 </template>
 
 <script setup lang="ts">
-import {getCurrentInstance, ref, watch} from 'vue'
+import { ref, watch } from 'vue'
+import { componentName } from '@/utils'
 
 const props = defineProps<{
 	childValue: boolean

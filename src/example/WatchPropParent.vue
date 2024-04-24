@@ -1,6 +1,6 @@
 <template>
 	<v-card>
-		<v-card-title>{{ getCurrentInstance()?.type.__name }}.vue</v-card-title>
+		<v-card-title>{{ componentName() }}</v-card-title>
 		<v-card-text>
 			Value: {{ value }}
 			<v-btn icon="mdi-sync" @click="value = !value"></v-btn>
@@ -10,8 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import {getCurrentInstance, ref} from 'vue'
+import { ref } from 'vue'
 import WatchPropChild from '@/example/WatchPropChild.vue'
+import { componentName } from '@/utils'
 
 const value = ref(false)
 </script>
