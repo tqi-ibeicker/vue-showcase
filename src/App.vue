@@ -17,11 +17,11 @@ const drawer = ref<boolean | null>(null)
 				<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 			</template>
 
-			<v-app-bar-title>Application</v-app-bar-title>
+			<v-app-bar-title>Vue Showcase</v-app-bar-title>
 		</v-app-bar>
 
 		<v-main>
-			<v-container fluid>
+			<v-container>
 				<RouterView />
 			</v-container>
 		</v-main>
