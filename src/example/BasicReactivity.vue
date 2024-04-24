@@ -1,8 +1,6 @@
 <template>
-	<h2>Reatividade básica</h2>
-	<p>Como criar um valor reativo e exibí-lo no template.</p>
 	<v-card>
-		<v-card-title>BasicReactivity.vue</v-card-title>
+		<v-card-title>{{ getCurrentInstance()?.type.__name }}.vue</v-card-title>
 		<v-card-text>
 			Count: {{ count }}
 			<v-btn icon="mdi-plus" @click="count += 1"></v-btn>
@@ -12,6 +10,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { getCurrentInstance } from 'vue'
 
 const count = ref(0)
 </script>

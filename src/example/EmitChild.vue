@@ -1,6 +1,6 @@
 <template>
   <v-card class="mt-4">
-    <v-card-title>EmitChild.vue</v-card-title>
+    <v-card-title>{{ getCurrentInstance()?.type.__name }}.vue</v-card-title>
     <v-card-text>
       ChildCount: {{ count }}
       <v-btn icon="mdi-plus" @click="increaseCount()"></v-btn>
@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
+import {getCurrentInstance, ref} from "vue";
 
 const emit = defineEmits<{
   increase: [value: number]

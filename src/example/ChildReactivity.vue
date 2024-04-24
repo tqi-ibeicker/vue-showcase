@@ -1,6 +1,6 @@
 <template>
   <v-card class="mt-4">
-    <v-card-title>ChildReactivity.vue</v-card-title>
+    <v-card-title>{{ getCurrentInstance()?.type.__name }}.vue</v-card-title>
     <v-card-text>
       ChildCount: {{ props.childCount }}
     </v-card-text>
@@ -8,6 +8,8 @@
 </template>
 
 <script setup lang="ts">
+import {getCurrentInstance} from "vue";
+
 const props = defineProps<{
   childCount: number
 }>()
