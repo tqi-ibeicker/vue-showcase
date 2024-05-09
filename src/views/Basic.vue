@@ -36,6 +36,13 @@
 			</p>
 			<WatchPropParent />
 
+      <h2>Objetos Reativos</h2>
+      <p>
+        Objetos reativos devem ser criados com <code>reactive()</code> e para eles não é necessário usar <code>.value</code>
+        para acessar os valores.
+      </p>
+      <ReactiveObject />
+
 			<h2>Manipulando Arrays Reativos</h2>
 			<p>
 				Arrays reativos não devem ser reatribuídos, pois assim o template perde a referência do proxy reativo que foi
@@ -44,6 +51,7 @@
 				à mudança.
 			</p>
 			<ClearReactiveArray />
+
 		</v-col>
 	</v-row>
 </template>
@@ -55,4 +63,5 @@ import ParentEmitListener from '@/example/EmitParent.vue'
 import BidirectionalParent from '@/example/BidirectionalParent.vue'
 import WatchPropParent from '@/example/WatchPropParent.vue'
 import ClearReactiveArray from '@/example/ClearReactiveArray.vue'
+import ReactiveObject from "@/example/ReactiveObject.vue";
 </script>

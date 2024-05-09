@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -21,6 +20,16 @@ const router = createRouter({
 			path: '/basic',
 			name: 'basic',
 			component: () => import('../views/Basic.vue'),
+		},
+		{
+			path: '/styling',
+			name: 'styling',
+			component: () => import('../views/Styling.vue'),
+		},
+		{
+			path: '/rendering',
+			name: 'rendering',
+			component: () => import('../views/Rendering.vue'),
 		},
 	],
 })
