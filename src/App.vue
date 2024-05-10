@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 
 import { ref } from 'vue'
+import { useAppTitle } from '@/stores/AppTitle'
 
 const drawer = ref<boolean | null>(null)
 
@@ -18,7 +19,13 @@ const items = [
 		title: 'Renderização',
 		value: 'rendering',
 	},
+	{
+		title: 'Estados',
+		value: 'state',
+	},
 ]
+
+const appTitle = useAppTitle()
 </script>
 
 <template>
@@ -28,7 +35,10 @@ const items = [
 				<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 			</template>
 
-			<v-app-bar-title>Vue Showcase</v-app-bar-title>
+			<v-app-bar-title
+				>{{ appTitle.titleComputed }}
+				<v-btn v-if="!appTitle.isOriginalTitle" icon="mdi-sync" @click="appTitle.reset"></v-btn>
+			</v-app-bar-title>
 		</v-app-bar>
 
 		<v-navigation-drawer v-model="drawer">

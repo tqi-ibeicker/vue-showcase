@@ -31,6 +31,11 @@ const router = createRouter({
 			name: 'rendering',
 			component: () => import('../views/Rendering.vue'),
 		},
+		{
+			path: '/state',
+			name: 'state',
+			component: () => import('../views/State.vue'),
+		},
 	],
 })
 
